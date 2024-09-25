@@ -30,6 +30,7 @@ animations = [{
 size = Vector2(14, 18)
 
 [node name="portal" type="Node2D"]
+z_index = -1
 script = ExtResource("1_ysarn")
 
 [node name="portal_sprite" type="AnimatedSprite2D" parent="."]
