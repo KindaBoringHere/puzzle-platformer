@@ -1,0 +1,46 @@
+[gd_scene load_steps=8 format=3 uid="uid://ioqn1r1y0yjl"]
+
+[ext_resource type="Script" path="res://portal.gd" id="1_ysarn"]
+[ext_resource type="Texture2D" uid="uid://bfpl56mfc8edg" path="res://my pixel art/portal.png" id="2_yrbo6"]
+[ext_resource type="Texture2D" uid="uid://dlbvtawgfljrm" path="res://my pixel art/portal_2.png" id="3_lnyay"]
+[ext_resource type="Texture2D" uid="uid://pj245m86moyw" path="res://my pixel art/portal_3.png" id="4_24q3e"]
+[ext_resource type="Texture2D" uid="uid://cfsdp3d3y11rb" path="res://my pixel art/portal_4.png" id="5_2akep"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_j342g"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_yrbo6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_lnyay")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_24q3e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_2akep")
+}],
+"loop": true,
+"name": &"looping",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c08g8"]
+size = Vector2(14, 18)
+
+[node name="portal" type="Node2D"]
+script = ExtResource("1_ysarn")
+
+[node name="portal_sprite" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_j342g")
+animation = &"looping"
+frame_progress = 0.0438161
+speed_scale = 1.5
+
+[node name="pulling_area_area2d" type="Area2D" parent="."]
+
+[node name="pulling_area" type="CollisionShape2D" parent="pulling_area_area2d"]
+shape = SubResource("RectangleShape2D_c08g8")
+
+[connection signal="body_entered" from="pulling_area_area2d" to="." method="_on_pulling_area_area_2d_body_entered"]

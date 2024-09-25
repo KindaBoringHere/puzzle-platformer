@@ -1,0 +1,63 @@
+[gd_scene load_steps=7 format=4 uid="uid://bnirofmd846dt"]
+
+[ext_resource type="Texture2D" uid="uid://c5y1d2lm1vco4" path="res://my pixel art/enviorment_tileset.png" id="1_53btm"]
+[ext_resource type="PackedScene" uid="uid://dd6nrqeyy5pvo" path="res://scenes/player.tscn" id="2_2amrs"]
+[ext_resource type="PackedScene" uid="uid://xlbk8p0d8jei" path="res://scenes/death_barrier.tscn" id="3_hdqs3"]
+[ext_resource type="PackedScene" uid="uid://ioqn1r1y0yjl" path="res://scenes/portal.tscn" id="4_mpyo6"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_d2oje"]
+texture = ExtResource("1_53btm")
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:0/0 = 0
+0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:1/0 = 0
+0:2/0 = 0
+0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:2/0 = 0
+0:3/0 = 0
+0:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, -2.25, -8, -2.25)
+1:3/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_unx1m"]
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_d2oje")
+
+[node name="test" type="Node2D"]
+
+[node name="enviorment" type="TileMapLayer" parent="."]
+scale = Vector2(2.4, 2.4)
+tile_map_data = PackedByteArray("AAASAAsAAAAAAAAAAAATAAsAAAAAAAAAAAAUAAsAAAAAAAAAAAASAAwAAAAAAAEAAAATAAwAAAAAAAEAAAAUAAwAAAAAAAEAAAASAA0AAAAAAAIAAAATAA0AAAAAAAIAAAAUAA0AAAAAAAIAAAAWAAsAAAAAAAAAAAAXAAsAAAAAAAAAAAAYAAsAAAAAAAAAAAAWAAwAAAAAAAEAAAAXAAwAAAAAAAEAAAAYAAwAAAAAAAEAAAAWAA0AAAAAAAIAAAAXAA0AAAAAAAIAAAAYAA0AAAAAAAIAAAAGAAUAAAAAAAAAAAAHAAUAAAAAAAAAAAACAAYAAAAAAAEAAAADAAYAAAAAAAEAAAAEAAYAAAAAAAEAAAAFAAYAAAAAAAEAAAAGAAYAAAAAAAEAAAAHAAYAAAAAAAEAAAACAAcAAAAAAAEAAAADAAcAAAAAAAEAAAAEAAcAAAAAAAEAAAAFAAcAAAAAAAEAAAAGAAcAAAAAAAEAAAAHAAcAAAAAAAEAAAAJAAQAAAAAAAMAAAAKAAQAAAAAAAMAAAALAAQAAAAAAAMAAAANAAUAAAAAAAAAAAAOAAUAAAAAAAAAAAANAAYAAAAAAAEAAAAOAAYAAAAAAAEAAAAHAA4AAAAAAAIAAAAGAA4AAAAAAAIAAAAFAA4AAAAAAAIAAAAEAA4AAAAAAAIAAAADAA4AAAAAAAIAAAACAA4AAAAAAAIAAAAHAA0AAAAAAAIAAAAHAAwAAAAAAAIAAAAHAAsAAAAAAAEAAAAHAAoAAAAAAAEAAAAHAAkAAAAAAAEAAAAHAAgAAAAAAAEAAAAGAAgAAAAAAAEAAAAFAAgAAAAAAAEAAAACAAgAAAAAAAEAAAACAAkAAAAAAAEAAAADAAgAAAAAAAEAAAAEAAgAAAAAAAEAAAAFAAkAAAAAAAEAAAAEAAkAAAAAAAEAAAAEAAoAAAAAAAEAAAADAAkAAAAAAAEAAAACAAoAAAAAAAEAAAACAAsAAAAAAAEAAAACAAwAAAAAAAIAAAACAA0AAAAAAAIAAAADAA0AAAAAAAIAAAADAAwAAAAAAAIAAAADAAsAAAAAAAEAAAADAAoAAAAAAAEAAAAEAAsAAAAAAAEAAAAEAAwAAAAAAAIAAAAEAA0AAAAAAAIAAAAFAA0AAAAAAAIAAAAFAAwAAAAAAAIAAAAFAAsAAAAAAAEAAAAFAAoAAAAAAAEAAAAGAAoAAAAAAAEAAAAGAAsAAAAAAAEAAAAGAAwAAAAAAAIAAAAGAA0AAAAAAAIAAAAGAAkAAAAAAAEAAAANAAwAAAAAAAIAAAAOAAwAAAAAAAIAAAANAA0AAAAAAAIAAAAOAA0AAAAAAAIAAAANAA4AAAAAAAIAAAAOAA4AAAAAAAIAAAANAAsAAAAAAAEAAAANAAoAAAAAAAEAAAAOAAoAAAAAAAEAAAAOAAkAAAAAAAEAAAAOAAgAAAAAAAEAAAAOAAcAAAAAAAEAAAANAAcAAAAAAAEAAAANAAgAAAAAAAEAAAANAAkAAAAAAAEAAAAOAAsAAAAAAAEAAAARAAcAAAAAAAMAAAASAAcAAAAAAAMAAAAGAAQAAAABAAEAAAARAAYAAAABAAMAAAAJAAMAAAABAAAAAAANAAQAAAABAAIAAAASAAoAAAABAAIAAAAUAAoAAAABAAAAAAADAAQAAAABAAMAAAACAAUAAAAAAAAAAAADAAUAAAAAAAAAAAAEAAUAAAAAAAAAAAAFAAUAAAAAAAAAAAAEAAMAAAAAAAMAAAAFAAMAAAAAAAMAAAAFAAIAAAABAAEAAAA=")
+tile_set = SubResource("TileSet_unx1m")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(557, 322)
+scale = Vector2(3, 3)
+zoom = Vector2(1.2, 1.2)
+position_smoothing_enabled = true
+
+[node name="player" parent="." instance=ExtResource("2_2amrs")]
+position = Vector2(110, 85)
+scale = Vector2(3, 3)
+
+[node name="barriers" type="Node2D" parent="."]
+
+[node name="death_barrier2" parent="barriers" instance=ExtResource("3_hdqs3")]
+position = Vector2(-5403, 41)
+scale = Vector2(16, 1)
+
+[node name="death_barrier" parent="barriers" instance=ExtResource("3_hdqs3")]
+position = Vector2(-330, 587)
+scale = Vector2(2, 1)
+
+[node name="death_barrier3" parent="barriers" instance=ExtResource("3_hdqs3")]
+position = Vector2(68, -607)
+rotation = 1.5708
+scale = Vector2(4, 1)
+
+[node name="portal" parent="." instance=ExtResource("4_mpyo6")]
+position = Vector2(905, 385)
+scale = Vector2(4.8, 4.8)
+
+[connection signal="death" from="barriers/death_barrier" to="player" method="_on_death_barrier_death"]
