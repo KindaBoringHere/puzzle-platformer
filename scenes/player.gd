@@ -1,5 +1,5 @@
 extends CharacterBody2D
-
+var player_moveable: bool = true
 var attacking: bool = false
 var dead: bool = false
 const SPEED = 300.0
@@ -10,9 +10,11 @@ func _ready() -> void:
 
 func _physics_process(delta: float) -> void:
 	var gravity = get_gravity().y * delta  # Use the y component of gravity
+	if dead or attacking or Global.player_finished:
+		player_moveable = false
 
 	# Handle gravity direction switch
-	if not dead and not attacking and Input.is_action_just_pressed("gravity"):
+	if player_moveable and Input.is_action_just_pressed("gravity"):
 		if gravity_direction == "up":
 			gravity_direction = "down"
 			$sprite.flip_v = false
@@ -34,14 +36,14 @@ func _physics_process(delta: float) -> void:
 	if is_on_floor() and gravity_direction == "down":
 		velocity.y = 0  # Reset velocity if on the floor and gravity is down
 
-	if not dead and not attacking and not Global.player_finished:
+	if player_moveable:
 		move_and_slide()
 
 	# Get the input direction and handle the movement/deceleration
 	var direction := Input.get_axis("ui_left", "ui_right")
 
 	# Only allow movement if not attacking or dead
-	if not attacking and not dead:
+	if player_moveable:
 		if direction != 0:
 			velocity.x = direction * SPEED
 		else:
@@ -68,7 +70,7 @@ func _physics_process(delta: float) -> void:
 			$sprite.flip_h = true
 
 	# Prevent attacking while in the air
-	if not dead:
+	if not dead and not Global.player_finished:
 		if Input.is_action_just_pressed("attack") and is_on_floor():
 			attacking = true
 			$sprite.play("attack")
