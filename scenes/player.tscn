@@ -199,7 +199,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_wyydk")
 }],
-"loop": true,
+"loop": false,
 "name": &"attack",
 "speed": 1.0
 }, {
@@ -225,7 +225,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_cthhm")
 }],
-"loop": true,
+"loop": false,
 "name": &"death",
 "speed": 3.0
 }, {
@@ -247,13 +247,13 @@ animations = [{
 }],
 "loop": true,
 "name": &"idle",
-"speed": 5.0
+"speed": 2.5
 }, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_25iqy")
 }],
-"loop": true,
+"loop": false,
 "name": &"reset",
 "speed": 5.0
 }, {
@@ -290,11 +290,11 @@ animations = [{
 }],
 "loop": true,
 "name": &"run",
-"speed": 5.0
+"speed": 2.5
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_48swi"]
-size = Vector2(2.98852, 10.9448)
+size = Vector2(1.49426, 10.9448)
 
 [node name="player" type="CharacterBody2D"]
 safe_margin = 1.0
@@ -303,14 +303,12 @@ script = ExtResource("1_31d0t")
 [node name="sprite" type="AnimatedSprite2D" parent="."]
 position = Vector2(1, -8)
 sprite_frames = SubResource("SpriteFrames_4x6r6")
-animation = &"attack"
-frame = 8
-frame_progress = 0.448814
+animation = &"death"
 speed_scale = 3.0
 offset = Vector2(3, 0)
 
 [node name="hitbox" type="CollisionShape2D" parent="."]
-position = Vector2(3.5, -8)
+position = Vector2(3.25, -8.00001)
 rotation = -3.14159
 scale = Vector2(5.01922, -1.67432)
 shape = SubResource("RectangleShape2D_48swi")
@@ -319,4 +317,8 @@ shape = SubResource("RectangleShape2D_48swi")
 wait_time = 0.677
 one_shot = true
 
+[node name="death_animation" type="Timer" parent="."]
+one_shot = true
+
 [connection signal="timeout" from="attack_animation_duration" to="." method="_on_attack_animation_duration_timeout"]
+[connection signal="timeout" from="death_animation" to="." method="_on_death_animation_timeout"]

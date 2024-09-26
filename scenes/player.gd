@@ -4,8 +4,10 @@ var attacking: bool = false
 var dead: bool = false
 const SPEED = 300.0
 var gravity_direction: String = "down"
+var start_pos
 
 func _ready() -> void:
+	start_pos =position 
 	add_to_group("player")
 
 func _physics_process(delta: float) -> void:
@@ -74,9 +76,18 @@ func _physics_process(delta: float) -> void:
 			$attack_animation_duration.start()
 			velocity.x = 0  # Ensure the player stops moving when attacking
 
-func _on_death_barrier_death() -> void:
-	$sprite.play("death")
-	dead = true
 
 func _on_attack_animation_duration_timeout() -> void:
 	attacking = false
+	
+func _on_death_barrier_death() -> void:
+	$death_animation.start()
+	$sprite.play("death")
+	dead = true
+
+	#makes the player go back after dying :)
+	
+func _on_death_animation_timeout():
+	print("going back")
+	position = start_pos
+	dead = false
