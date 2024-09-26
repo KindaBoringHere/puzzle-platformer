@@ -294,7 +294,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_48swi"]
-size = Vector2(8, 17.5)
+size = Vector2(2.98852, 10.9448)
 
 [node name="player" type="CharacterBody2D"]
 safe_margin = 1.0
@@ -303,13 +303,16 @@ script = ExtResource("1_31d0t")
 [node name="sprite" type="AnimatedSprite2D" parent="."]
 position = Vector2(1, -8)
 sprite_frames = SubResource("SpriteFrames_4x6r6")
-animation = &"death"
-frame_progress = 0.2725
+animation = &"attack"
+frame = 8
+frame_progress = 0.448814
 speed_scale = 3.0
 offset = Vector2(3, 0)
 
 [node name="hitbox" type="CollisionShape2D" parent="."]
-position = Vector2(3, 1)
+position = Vector2(3.5, -8)
+rotation = -3.14159
+scale = Vector2(5.01922, -1.67432)
 shape = SubResource("RectangleShape2D_48swi")
 
 [node name="attack_animation_duration" type="Timer" parent="."]
