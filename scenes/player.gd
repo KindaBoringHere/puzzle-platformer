@@ -16,12 +16,11 @@ func _physics_process(delta: float) -> void:
 		if gravity_direction == "up":
 			gravity_direction = "down"
 			$sprite.flip_v = false
-			$hitbox.position.y = 7.25
 			up_direction = Vector2(0, -1)
 		elif gravity_direction == "down":
 			gravity_direction = "up"
 			$sprite.flip_v = true
-			$hitbox.position.y = -8
+
 			up_direction = Vector2(0, 1)
 
 	# Apply gravity
