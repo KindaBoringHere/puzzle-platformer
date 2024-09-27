@@ -1,0 +1,28 @@
+[gd_scene load_steps=2 format=3 uid="uid://cbj2vnrjpam2s"]
+
+[ext_resource type="PackedScene" uid="uid://xlbk8p0d8jei" path="res://scenes/death_barrier.tscn" id="1_piuw5"]
+
+[node name="level tamplate" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(557, 322)
+scale = Vector2(3, 3)
+zoom = Vector2(1.2, 1.2)
+position_smoothing_enabled = true
+
+[node name="barriers" type="Node2D" parent="."]
+
+[node name="death_barrier2" parent="barriers" instance=ExtResource("1_piuw5")]
+position = Vector2(603, 40)
+
+[node name="death_barrier" parent="barriers" instance=ExtResource("1_piuw5")]
+position = Vector2(580, 606)
+scale = Vector2(2, 1)
+
+[node name="death_barrier3" parent="barriers" instance=ExtResource("1_piuw5")]
+position = Vector2(64, 282)
+rotation = 1.5708
+
+[node name="death_barrier4" parent="barriers" instance=ExtResource("1_piuw5")]
+position = Vector2(1048, 424)
+rotation = 1.5708

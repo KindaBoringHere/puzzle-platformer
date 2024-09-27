@@ -1,38 +1,38 @@
-[gd_scene load_steps=71 format=3 uid="uid://dd6nrqeyy5pvo"]
+[gd_scene load_steps=69 format=3 uid="uid://dd6nrqeyy5pvo"]
 
-[ext_resource type="Texture2D" uid="uid://2m1snjbiyq1b" path="res://Spearman/Attack/Spearman_attack1.png" id="1_4f3l5"]
-[ext_resource type="Script" path="res://scenes/player.gd" id="1_31d0t"]
-[ext_resource type="Texture2D" uid="uid://b3qq2ilejjnqu" path="res://Spearman/Attack/Spearman_attack2.png" id="2_ynlm1"]
-[ext_resource type="Texture2D" uid="uid://64pw36pew7ak" path="res://Spearman/Attack/Spearman_attack3.png" id="3_kjmpf"]
-[ext_resource type="Texture2D" uid="uid://bgaicx0ksgegk" path="res://Spearman/Attack/Spearman_attack4.png" id="4_37vsb"]
-[ext_resource type="Texture2D" uid="uid://p855pxm8rv26" path="res://Spearman/Attack/Spearman_attack5.png" id="5_q27b4"]
-[ext_resource type="Texture2D" uid="uid://bwepw8das1q8h" path="res://Spearman/Attack/Spearman_attack6.png" id="6_vpsrh"]
-[ext_resource type="Texture2D" uid="uid://dwegkognanjei" path="res://Spearman/Attack/Spearman_attack7.png" id="7_j1w8a"]
-[ext_resource type="Texture2D" uid="uid://61hsk2mjqj0w" path="res://Spearman/Attack/Spearman_attack8.png" id="8_rx0v0"]
-[ext_resource type="Texture2D" uid="uid://bd0pvipnuun1t" path="res://Spearman/Attack/Spearman_attack9.png" id="9_avthe"]
-[ext_resource type="Texture2D" uid="uid://b1hs8kli3bbm7" path="res://Spearman/Attack/Spearman_attack10.png" id="10_tmmvy"]
-[ext_resource type="Texture2D" uid="uid://c4317sl4x0di3" path="res://Spearman/Death/Spearman_death1.png" id="11_12ksr"]
-[ext_resource type="Texture2D" uid="uid://dwepftrijmi45" path="res://Spearman/Death/Spearman_death2.png" id="12_q2qsc"]
-[ext_resource type="Texture2D" uid="uid://b0cd57k3fhfgm" path="res://Spearman/Death/Spearman_death3.png" id="13_nq5b3"]
-[ext_resource type="Texture2D" uid="uid://ckxuvjhfdnleh" path="res://Spearman/Death/Spearman_death4.png" id="14_iwj0o"]
-[ext_resource type="Texture2D" uid="uid://bfugiuqxsqdra" path="res://Spearman/Death/Spearman_death5.png" id="15_kkyyx"]
-[ext_resource type="Texture2D" uid="uid://dfaieetvbpl0a" path="res://Spearman/Death/Spearman_death6.png" id="16_xy1ym"]
-[ext_resource type="Texture2D" uid="uid://bmtnpic2wcbun" path="res://Spearman/Death/Spearman_death7.png" id="17_g4tli"]
-[ext_resource type="Texture2D" uid="uid://thvilxmxeggq" path="res://Spearman/Idle/Spearman_Idle1.png" id="18_dg0yu"]
-[ext_resource type="Texture2D" uid="uid://d24u4iwxmi6u5" path="res://Spearman/Idle/Spearman_Idle2.png" id="19_pqlqj"]
-[ext_resource type="Texture2D" uid="uid://bbuoaxiw2ddgy" path="res://Spearman/Idle/Spearman_Idle3.png" id="20_pcxqc"]
-[ext_resource type="Texture2D" uid="uid://ilml0vbwgnlg" path="res://Spearman/Idle/Spearman_Idle4.png" id="21_5vwn8"]
-[ext_resource type="Texture2D" uid="uid://dexdm7jeis827" path="res://Spearman/Idle/Spearman_Idle5.png" id="22_chyd0"]
-[ext_resource type="Texture2D" uid="uid://cb1v25osrfytp" path="res://Spearman/Run/Spearman_run1.png" id="23_pkm2x"]
-[ext_resource type="Texture2D" uid="uid://br1xwq5c4qlxw" path="res://Spearman/Run/Spearman_run2.png" id="24_maay4"]
-[ext_resource type="Texture2D" uid="uid://d4imrtkvu1wf3" path="res://Spearman/Run/Spearman_run3.png" id="25_p0e2f"]
-[ext_resource type="Texture2D" uid="uid://cg7kjm8ot5hrm" path="res://Spearman/Run/Spearman_run4.png" id="26_vi02s"]
-[ext_resource type="Texture2D" uid="uid://dnq4wyki2s2gj" path="res://Spearman/Run/Spearman_run5.png" id="27_ldkvb"]
-[ext_resource type="Texture2D" uid="uid://b7rqt456o4hx5" path="res://Spearman/Run/Spearman_run6.png" id="28_3xd3e"]
-[ext_resource type="Texture2D" uid="uid://25wsnysha7nc" path="res://Spearman/Run/Spearman_run7.png" id="29_s7gu3"]
-[ext_resource type="Texture2D" uid="uid://kvajrvcmcrrd" path="res://Spearman/Run/Spearman_run8.png" id="30_cecw4"]
-[ext_resource type="Texture2D" uid="uid://cnmmdffrgfelo" path="res://Spearman/Run/Spearman_run9.png" id="31_feo6a"]
-[ext_resource type="Texture2D" uid="uid://d4dggnnsv23wl" path="res://Spearman/Run/Spearman_run10.png" id="32_klja3"]
+[ext_resource type="Texture2D" uid="uid://2m1snjbiyq1b" path="res://sprites/Spearman/Attack/Spearman_attack1.png" id="1_4f3l5"]
+[ext_resource type="Script" path="res://scripts/player.gd" id="1_31d0t"]
+[ext_resource type="Texture2D" uid="uid://b3qq2ilejjnqu" path="res://sprites/Spearman/Attack/Spearman_attack2.png" id="2_ynlm1"]
+[ext_resource type="Texture2D" uid="uid://64pw36pew7ak" path="res://sprites/Spearman/Attack/Spearman_attack3.png" id="3_kjmpf"]
+[ext_resource type="Texture2D" uid="uid://bgaicx0ksgegk" path="res://sprites/Spearman/Attack/Spearman_attack4.png" id="4_37vsb"]
+[ext_resource type="Texture2D" uid="uid://p855pxm8rv26" path="res://sprites/Spearman/Attack/Spearman_attack5.png" id="5_q27b4"]
+[ext_resource type="Texture2D" uid="uid://bwepw8das1q8h" path="res://sprites/Spearman/Attack/Spearman_attack6.png" id="6_vpsrh"]
+[ext_resource type="Texture2D" uid="uid://dwegkognanjei" path="res://sprites/Spearman/Attack/Spearman_attack7.png" id="7_j1w8a"]
+[ext_resource type="Texture2D" uid="uid://61hsk2mjqj0w" path="res://sprites/Spearman/Attack/Spearman_attack8.png" id="8_rx0v0"]
+[ext_resource type="Texture2D" uid="uid://bd0pvipnuun1t" path="res://sprites/Spearman/Attack/Spearman_attack9.png" id="9_avthe"]
+[ext_resource type="Texture2D" uid="uid://b1hs8kli3bbm7" path="res://sprites/Spearman/Attack/Spearman_attack10.png" id="10_tmmvy"]
+[ext_resource type="Texture2D" uid="uid://c4317sl4x0di3" path="res://sprites/Spearman/Death/Spearman_death1.png" id="11_12ksr"]
+[ext_resource type="Texture2D" uid="uid://dwepftrijmi45" path="res://sprites/Spearman/Death/Spearman_death2.png" id="12_q2qsc"]
+[ext_resource type="Texture2D" uid="uid://b0cd57k3fhfgm" path="res://sprites/Spearman/Death/Spearman_death3.png" id="13_nq5b3"]
+[ext_resource type="Texture2D" uid="uid://ckxuvjhfdnleh" path="res://sprites/Spearman/Death/Spearman_death4.png" id="14_iwj0o"]
+[ext_resource type="Texture2D" uid="uid://bfugiuqxsqdra" path="res://sprites/Spearman/Death/Spearman_death5.png" id="15_kkyyx"]
+[ext_resource type="Texture2D" uid="uid://dfaieetvbpl0a" path="res://sprites/Spearman/Death/Spearman_death6.png" id="16_xy1ym"]
+[ext_resource type="Texture2D" uid="uid://bmtnpic2wcbun" path="res://sprites/Spearman/Death/Spearman_death7.png" id="17_g4tli"]
+[ext_resource type="Texture2D" uid="uid://thvilxmxeggq" path="res://sprites/Spearman/Idle/Spearman_Idle1.png" id="18_dg0yu"]
+[ext_resource type="Texture2D" uid="uid://d24u4iwxmi6u5" path="res://sprites/Spearman/Idle/Spearman_Idle2.png" id="19_pqlqj"]
+[ext_resource type="Texture2D" uid="uid://bbuoaxiw2ddgy" path="res://sprites/Spearman/Idle/Spearman_Idle3.png" id="20_pcxqc"]
+[ext_resource type="Texture2D" uid="uid://ilml0vbwgnlg" path="res://sprites/Spearman/Idle/Spearman_Idle4.png" id="21_5vwn8"]
+[ext_resource type="Texture2D" uid="uid://dexdm7jeis827" path="res://sprites/Spearman/Idle/Spearman_Idle5.png" id="22_chyd0"]
+[ext_resource type="Texture2D" uid="uid://cb1v25osrfytp" path="res://sprites/Spearman/Run/Spearman_run1.png" id="23_pkm2x"]
+[ext_resource type="Texture2D" uid="uid://br1xwq5c4qlxw" path="res://sprites/Spearman/Run/Spearman_run2.png" id="24_maay4"]
+[ext_resource type="Texture2D" uid="uid://d4imrtkvu1wf3" path="res://sprites/Spearman/Run/Spearman_run3.png" id="25_p0e2f"]
+[ext_resource type="Texture2D" uid="uid://cg7kjm8ot5hrm" path="res://sprites/Spearman/Run/Spearman_run4.png" id="26_vi02s"]
+[ext_resource type="Texture2D" uid="uid://dnq4wyki2s2gj" path="res://sprites/Spearman/Run/Spearman_run5.png" id="27_ldkvb"]
+[ext_resource type="Texture2D" uid="uid://b7rqt456o4hx5" path="res://sprites/Spearman/Run/Spearman_run6.png" id="28_3xd3e"]
+[ext_resource type="Texture2D" uid="uid://25wsnysha7nc" path="res://sprites/Spearman/Run/Spearman_run7.png" id="29_s7gu3"]
+[ext_resource type="Texture2D" uid="uid://kvajrvcmcrrd" path="res://sprites/Spearman/Run/Spearman_run8.png" id="30_cecw4"]
+[ext_resource type="Texture2D" uid="uid://cnmmdffrgfelo" path="res://sprites/Spearman/Run/Spearman_run9.png" id="31_feo6a"]
+[ext_resource type="Texture2D" uid="uid://d4dggnnsv23wl" path="res://sprites/Spearman/Run/Spearman_run10.png" id="32_klja3"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hw7es"]
 atlas = ExtResource("1_4f3l5")
@@ -294,36 +294,28 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_48swi"]
-size = Vector2(1.7433, 10.1534)
-
-[sub_resource type="QuadMesh" id="QuadMesh_716pd"]
-
-[sub_resource type="ImageTexture" id="ImageTexture_qa7ot"]
+size = Vector2(1.7433, 10.452)
 
 [node name="player" type="CharacterBody2D"]
+scale = Vector2(3, 3)
 safe_margin = 1.0
 script = ExtResource("1_31d0t")
 
 [node name="sprite" type="AnimatedSprite2D" parent="."]
-position = Vector2(1, -8)
+position = Vector2(3, -6)
 sprite_frames = SubResource("SpriteFrames_4x6r6")
-animation = &"death"
+animation = &"idle"
+frame_progress = 0.840408
 speed_scale = 3.0
 offset = Vector2(3, 0)
 
 [node name="hitbox" type="CollisionShape2D" parent="."]
-position = Vector2(5.375, -6.49999)
+position = Vector2(5, -5.75001)
 rotation = -3.14159
 scale = Vector2(5.01922, -1.67432)
 shape = SubResource("RectangleShape2D_48swi")
 
 [node name="death_animation" type="Timer" parent="."]
 one_shot = true
-
-[node name="MeshInstance2D" type="MeshInstance2D" parent="."]
-position = Vector2(5.5, -6.5)
-scale = Vector2(9, 17)
-mesh = SubResource("QuadMesh_716pd")
-texture = SubResource("ImageTexture_qa7ot")
 
 [connection signal="timeout" from="death_animation" to="." method="_on_death_animation_timeout"]
