@@ -80,3 +80,4 @@ func _on_death_animation_timeout():
 	print("going back")
 	position = start_pos
 	player_moveable = true
+	
