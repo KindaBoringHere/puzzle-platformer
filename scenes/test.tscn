@@ -38,21 +38,21 @@ zoom = Vector2(1.2, 1.2)
 position_smoothing_enabled = true
 
 [node name="player" parent="." instance=ExtResource("2_2amrs")]
-position = Vector2(110, 85)
+position = Vector2(111, 135)
 scale = Vector2(3, 3)
 
 [node name="barriers" type="Node2D" parent="."]
 
 [node name="death_barrier2" parent="barriers" instance=ExtResource("3_hdqs3")]
-position = Vector2(-5403, 41)
+position = Vector2(-5385, 31)
 scale = Vector2(16, 1)
 
 [node name="death_barrier" parent="barriers" instance=ExtResource("3_hdqs3")]
-position = Vector2(-330, 587)
+position = Vector2(-318, 621)
 scale = Vector2(2, 1)
 
 [node name="death_barrier3" parent="barriers" instance=ExtResource("3_hdqs3")]
-position = Vector2(68, -607)
+position = Vector2(24, -660)
 rotation = 1.5708
 scale = Vector2(4, 1)
 
