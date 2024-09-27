@@ -1,23 +1,9 @@
-[gd_scene load_steps=8 format=4 uid="uid://bnirofmd846dt"]
+[gd_scene load_steps=7 format=4 uid="uid://bnirofmd846dt"]
 
 [ext_resource type="Texture2D" uid="uid://c5y1d2lm1vco4" path="res://sprites/my pixel art/enviorment_tileset.png" id="1_k5qe6"]
 [ext_resource type="PackedScene" uid="uid://dd6nrqeyy5pvo" path="res://scenes/player.tscn" id="2_2amrs"]
 [ext_resource type="PackedScene" uid="uid://xlbk8p0d8jei" path="res://scenes/death_barrier.tscn" id="3_hdqs3"]
 [ext_resource type="PackedScene" uid="uid://ioqn1r1y0yjl" path="res://scenes/portal.tscn" id="4_mpyo6"]
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_d2oje"]
-0:0/0 = 0
-0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
-1:0/0 = 0
-0:1/0 = 0
-0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
-1:1/0 = 0
-0:2/0 = 0
-0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
-1:2/0 = 0
-0:3/0 = 0
-0:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, -1.875, -8, -1.75)
-1:3/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wxwga"]
 texture = ExtResource("1_k5qe6")
@@ -48,7 +34,6 @@ texture = ExtResource("1_k5qe6")
 
 [sub_resource type="TileSet" id="TileSet_unx1m"]
 physics_layer_0/collision_layer = 1
-sources/0 = SubResource("TileSetAtlasSource_d2oje")
 sources/1 = SubResource("TileSetAtlasSource_wxwga")
 
 [node name="test" type="Node2D"]
