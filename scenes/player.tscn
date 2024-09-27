@@ -313,12 +313,7 @@ rotation = -3.14159
 scale = Vector2(5.01922, -1.67432)
 shape = SubResource("RectangleShape2D_48swi")
 
-[node name="attack_animation_duration" type="Timer" parent="."]
-wait_time = 0.677
-one_shot = true
-
 [node name="death_animation" type="Timer" parent="."]
 one_shot = true
 
-[connection signal="timeout" from="attack_animation_duration" to="." method="_on_attack_animation_duration_timeout"]
 [connection signal="timeout" from="death_animation" to="." method="_on_death_animation_timeout"]

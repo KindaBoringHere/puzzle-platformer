@@ -1,7 +1,6 @@
 extends CharacterBody2D
 var player_moveable: bool = true
 var attacking: bool = false
-var dead: bool = false
 const SPEED = 300.0
 var gravity_direction: String = "down"
 var start_pos
@@ -12,7 +11,7 @@ func _ready() -> void:
 
 func _physics_process(delta: float) -> void:
 	var gravity = get_gravity().y * delta  # Use the y component of gravity
-	if dead or attacking or Global.player_finished:
+	if attacking or Global.player_finished:
 		player_moveable = false
 
 	# Handle gravity direction switch
@@ -51,7 +50,7 @@ func _physics_process(delta: float) -> void:
 			velocity.x = move_toward(velocity.x, 0, SPEED)
 
 	# Animation and flipping logic
-	if not dead:
+	if player_moveable:
 		if attacking:
 			velocity.x = 0  # Stop horizontal movement during the attack
 			$sprite.play("attack")
@@ -71,26 +70,19 @@ func _physics_process(delta: float) -> void:
 			$sprite.flip_h = true
 
 	# Prevent attacking while in the air
-	if not dead and not Global.player_finished:
-		if Input.is_action_just_pressed("attack") and is_on_floor():
-			attacking = true
-			$sprite.play("attack")
-			$attack_animation_duration.start()
-			velocity.x = 0  # Ensure the player stops moving when attacking
 
 
-func _on_attack_animation_duration_timeout() -> void:
-	attacking = false
+
+
 	
 func _on_death_barrier_death() -> void:
 	$death_animation.start()
 	$sprite.play("death")
-	dead = true
+	player_moveable = false
 
 	#makes the player go back after dying :)
 	
 func _on_death_animation_timeout():
 	print("going back")
 	position = start_pos
-	dead = false
 	player_moveable = true
