@@ -1,4 +1,4 @@
-[gd_scene load_steps=69 format=3 uid="uid://dd6nrqeyy5pvo"]
+[gd_scene load_steps=71 format=3 uid="uid://dd6nrqeyy5pvo"]
 
 [ext_resource type="Texture2D" uid="uid://2m1snjbiyq1b" path="res://Spearman/Attack/Spearman_attack1.png" id="1_4f3l5"]
 [ext_resource type="Script" path="res://scenes/player.gd" id="1_31d0t"]
@@ -294,7 +294,11 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_48swi"]
-size = Vector2(1.7433, 11.445)
+size = Vector2(1.7433, 10.1534)
+
+[sub_resource type="QuadMesh" id="QuadMesh_716pd"]
+
+[sub_resource type="ImageTexture" id="ImageTexture_qa7ot"]
 
 [node name="player" type="CharacterBody2D"]
 safe_margin = 1.0
@@ -308,12 +312,18 @@ speed_scale = 3.0
 offset = Vector2(3, 0)
 
 [node name="hitbox" type="CollisionShape2D" parent="."]
-position = Vector2(5.375, -7.58127)
+position = Vector2(5.375, -6.49999)
 rotation = -3.14159
 scale = Vector2(5.01922, -1.67432)
 shape = SubResource("RectangleShape2D_48swi")
 
 [node name="death_animation" type="Timer" parent="."]
 one_shot = true
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="."]
+position = Vector2(5.5, -6.5)
+scale = Vector2(9, 17)
+mesh = SubResource("QuadMesh_716pd")
+texture = SubResource("ImageTexture_qa7ot")
 
 [connection signal="timeout" from="death_animation" to="." method="_on_death_animation_timeout"]
