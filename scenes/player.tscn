@@ -1,7 +1,7 @@
 [gd_scene load_steps=69 format=3 uid="uid://dd6nrqeyy5pvo"]
 
 [ext_resource type="Texture2D" uid="uid://2m1snjbiyq1b" path="res://sprites/Spearman/Attack/Spearman_attack1.png" id="1_4f3l5"]
-[ext_resource type="Script" path="res://scenes/player.gd" id="1_31d0t"]
+[ext_resource type="Script" path="res://scripts/player.gd" id="1_31d0t"]
 [ext_resource type="Texture2D" uid="uid://b3qq2ilejjnqu" path="res://sprites/Spearman/Attack/Spearman_attack2.png" id="2_ynlm1"]
 [ext_resource type="Texture2D" uid="uid://64pw36pew7ak" path="res://sprites/Spearman/Attack/Spearman_attack3.png" id="3_kjmpf"]
 [ext_resource type="Texture2D" uid="uid://bgaicx0ksgegk" path="res://sprites/Spearman/Attack/Spearman_attack4.png" id="4_37vsb"]
@@ -294,21 +294,23 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_48swi"]
-size = Vector2(1.7433, 10.1534)
+size = Vector2(1.7433, 10.452)
 
 [node name="player" type="CharacterBody2D"]
+scale = Vector2(3, 3)
 safe_margin = 1.0
 script = ExtResource("1_31d0t")
 
 [node name="sprite" type="AnimatedSprite2D" parent="."]
-position = Vector2(1, -8)
+position = Vector2(3, -6)
 sprite_frames = SubResource("SpriteFrames_4x6r6")
-animation = &"death"
+animation = &"idle"
+frame_progress = 0.840408
 speed_scale = 3.0
 offset = Vector2(3, 0)
 
 [node name="hitbox" type="CollisionShape2D" parent="."]
-position = Vector2(5.375, -6.49999)
+position = Vector2(5, -5.75001)
 rotation = -3.14159
 scale = Vector2(5.01922, -1.67432)
 shape = SubResource("RectangleShape2D_48swi")
