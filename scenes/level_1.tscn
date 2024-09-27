@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://bbhigtvk530bg"]
+[gd_scene load_steps=7 format=3 uid="uid://bbhigtvk530bg"]
 
 [ext_resource type="Texture2D" uid="uid://c5y1d2lm1vco4" path="res://sprites/my pixel art/enviorment_tileset.png" id="1_iv34d"]
 [ext_resource type="PackedScene" uid="uid://dd6nrqeyy5pvo" path="res://scenes/player.tscn" id="2_kdp1t"]
+[ext_resource type="PackedScene" uid="uid://cbj2vnrjpam2s" path="res://scenes/level_tamplate.tscn" id="3_ti0xo"]
 [ext_resource type="PackedScene" uid="uid://ioqn1r1y0yjl" path="res://scenes/portal.tscn" id="3_u7bj0"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_n2cd6"]
@@ -41,8 +42,10 @@ sources/0 = SubResource("TileSetAtlasSource_n2cd6")
 scale = Vector2(2.4, 2.4)
 tile_set = SubResource("TileSet_nfkwa")
 
-[node name="player" parent="." instance=ExtResource("2_kdp1t")]
-position = Vector2(39, 550)
-
 [node name="portal" parent="." instance=ExtResource("3_u7bj0")]
 position = Vector2(768, 38)
+
+[node name="level tamplate" parent="." instance=ExtResource("3_ti0xo")]
+
+[node name="player" parent="." instance=ExtResource("2_kdp1t")]
+position = Vector2(108, 425)
