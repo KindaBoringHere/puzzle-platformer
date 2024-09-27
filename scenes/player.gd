@@ -89,3 +89,15 @@ func _on_death_animation_timeout():
 	position = start_pos
 	player_moveable = true
 	
+
+
+func _on_death_barrier_3_death() -> void:
+	$death_animation.start()
+	$sprite.play("death")
+	player_moveable = false
+
+
+func _on_death_barrier_2_death() -> void:
+	$death_animation.start()
+	$sprite.play("death")
+	player_moveable = false
