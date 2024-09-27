@@ -294,7 +294,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_48swi"]
-size = Vector2(1.7433, 11.445)
+size = Vector2(1.7433, 10.1534)
 
 [node name="player" type="CharacterBody2D"]
 safe_margin = 1.0
@@ -308,7 +308,7 @@ speed_scale = 3.0
 offset = Vector2(3, 0)
 
 [node name="hitbox" type="CollisionShape2D" parent="."]
-position = Vector2(5.375, -7.58127)
+position = Vector2(5.375, -6.49999)
 rotation = -3.14159
 scale = Vector2(5.01922, -1.67432)
 shape = SubResource("RectangleShape2D_48swi")

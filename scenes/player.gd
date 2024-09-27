@@ -68,9 +68,7 @@ func _physics_process(delta: float) -> void:
 		# Flip sprite based on direction
 		if velocity.x > 0:
 			$sprite.flip_h = false
-			$hitbox.position.x = -4
 		elif velocity.x < 0:
-			$hitbox.position.x = 4
 			$sprite.flip_h = true
 
 	# Prevent attacking while in the air
