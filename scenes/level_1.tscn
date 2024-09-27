@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://c5y1d2lm1vco4" path="res://sprites/my pixel art/enviorment_tileset.png" id="1_iv34d"]
 [ext_resource type="PackedScene" uid="uid://dd6nrqeyy5pvo" path="res://scenes/player.tscn" id="2_kdp1t"]
-[ext_resource type="PackedScene" uid="uid://cbj2vnrjpam2s" path="res://scenes/level_tamplate.tscn" id="3_ti0xo"]
+[ext_resource type="PackedScene" uid="uid://cxopmv26iowfs" path="res://scenes/level_tamplate.tscn" id="3_ti0xo"]
 [ext_resource type="PackedScene" uid="uid://ioqn1r1y0yjl" path="res://scenes/portal.tscn" id="3_u7bj0"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_n2cd6"]
@@ -38,14 +38,14 @@ sources/0 = SubResource("TileSetAtlasSource_n2cd6")
 
 [node name="level 1" type="Node2D"]
 
+[node name="level tamplate" parent="." instance=ExtResource("3_ti0xo")]
+
+[node name="player" parent="." instance=ExtResource("2_kdp1t")]
+position = Vector2(108, 425)
+
 [node name="enviroment" type="TileMapLayer" parent="."]
 scale = Vector2(2.4, 2.4)
 tile_set = SubResource("TileSet_nfkwa")
 
 [node name="portal" parent="." instance=ExtResource("3_u7bj0")]
-position = Vector2(768, 38)
-
-[node name="level tamplate" parent="." instance=ExtResource("3_ti0xo")]
-
-[node name="player" parent="." instance=ExtResource("2_kdp1t")]
-position = Vector2(108, 425)
+position = Vector2(900, 248)
