@@ -1,6 +1,5 @@
 extends CharacterBody2D
 var player_moveable: bool = true
-var attacking: bool = false
 const SPEED = 300.0
 var gravity_direction: String = "down"
 var start_pos
@@ -11,7 +10,7 @@ func _ready() -> void:
 
 func _physics_process(delta: float) -> void:
 	var gravity = get_gravity().y * delta  # Use the y component of gravity
-	if attacking or Global.player_finished:
+	if Global.player_finished:
 		player_moveable = false
 
 	# Handle gravity direction switch
@@ -51,10 +50,7 @@ func _physics_process(delta: float) -> void:
 
 	# Animation and flipping logic
 	if player_moveable:
-		if attacking:
-			velocity.x = 0  # Stop horizontal movement during the attack
-			$sprite.play("attack")
-		elif velocity.x != 0:
+		if velocity.x != 0:
 			$sprite.play("run")
 		elif velocity == Vector2.ZERO:
 			$sprite.play("idle")
