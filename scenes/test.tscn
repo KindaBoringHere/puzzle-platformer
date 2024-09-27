@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=4 uid="uid://bnirofmd846dt"]
+[gd_scene load_steps=8 format=4 uid="uid://bnirofmd846dt"]
 
-[ext_resource type="Texture2D" uid="uid://c5y1d2lm1vco4" path="res://my pixel art/enviorment_tileset.png" id="1_53btm"]
+[ext_resource type="Texture2D" uid="uid://c5y1d2lm1vco4" path="res://sprites/my pixel art/enviorment_tileset.png" id="1_53btm"]
 [ext_resource type="PackedScene" uid="uid://dd6nrqeyy5pvo" path="res://scenes/player.tscn" id="2_2amrs"]
 [ext_resource type="PackedScene" uid="uid://xlbk8p0d8jei" path="res://scenes/death_barrier.tscn" id="3_hdqs3"]
 [ext_resource type="PackedScene" uid="uid://ioqn1r1y0yjl" path="res://scenes/portal.tscn" id="4_mpyo6"]
+[ext_resource type="FontFile" uid="uid://cjl5772dbpabj" path="res://sprites/my pixel art/ThaleahFat.ttf" id="5_g6a6b"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_d2oje"]
 texture = ExtResource("1_53btm")
@@ -39,7 +40,6 @@ position_smoothing_enabled = true
 
 [node name="player" parent="." instance=ExtResource("2_2amrs")]
 position = Vector2(111, 135)
-scale = Vector2(3, 3)
 
 [node name="barriers" type="Node2D" parent="."]
 
@@ -58,5 +58,16 @@ position = Vector2(85, 44)
 [node name="portal" parent="." instance=ExtResource("4_mpyo6")]
 position = Vector2(905, 385)
 scale = Vector2(4.8, 4.8)
+
+[node name="letters" type="RichTextLabel" parent="."]
+offset_left = 636.0
+offset_top = 85.0
+offset_right = 722.0
+offset_bottom = 125.0
+theme_override_constants/shadow_outline_size = 0
+theme_override_constants/line_separation = 0
+theme_override_fonts/normal_font = ExtResource("5_g6a6b")
+theme_override_font_sizes/normal_font_size = 36
+text = "A D H"
 
 [connection signal="death" from="barriers/death_barrier" to="player" method="_on_death_barrier_death"]
