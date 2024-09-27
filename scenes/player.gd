@@ -3,27 +3,35 @@ var player_moveable: bool = true
 const SPEED = 300.0
 var gravity_direction: String = "down"
 var start_pos
+var flips_left: int = 1
+var total_flips: int = 1
 
 func _ready() -> void:
-	start_pos =position 
+	start_pos = position 
 	add_to_group("player")
 
 func _physics_process(delta: float) -> void:
+	print(flips_left)
 	var gravity = get_gravity().y * delta  # Use the y component of gravity
 	if Global.player_finished:
 		player_moveable = false
-
+		
+	if self.is_on_floor():
+		flips_left = total_flips
+			
+		
 	# Handle gravity direction switch
-	if player_moveable and Input.is_action_just_pressed("gravity"):
+	if player_moveable and Input.is_action_just_pressed("gravity") and flips_left > 0:
 		if gravity_direction == "up":
 			gravity_direction = "down"
 			$sprite.flip_v = false
 			up_direction = Vector2(0, -1)
+			flips_left -= 1
 		elif gravity_direction == "down":
 			gravity_direction = "up"
 			$sprite.flip_v = true
-
 			up_direction = Vector2(0, 1)
+			flips_left -= 1
 
 	# Apply gravity
 	if gravity_direction == "down":

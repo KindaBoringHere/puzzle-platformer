@@ -43,10 +43,6 @@ scale = Vector2(3, 3)
 
 [node name="barriers" type="Node2D" parent="."]
 
-[node name="death_barrier2" parent="barriers" instance=ExtResource("3_hdqs3")]
-position = Vector2(-5385, 31)
-scale = Vector2(16, 1)
-
 [node name="death_barrier" parent="barriers" instance=ExtResource("3_hdqs3")]
 position = Vector2(-318, 621)
 scale = Vector2(2, 1)
@@ -55,6 +51,9 @@ scale = Vector2(2, 1)
 position = Vector2(24, -660)
 rotation = 1.5708
 scale = Vector2(4, 1)
+
+[node name="death_barrier2" parent="barriers" instance=ExtResource("3_hdqs3")]
+position = Vector2(85, 44)
 
 [node name="portal" parent="." instance=ExtResource("4_mpyo6")]
 position = Vector2(905, 385)
