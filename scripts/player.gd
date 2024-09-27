@@ -11,7 +11,6 @@ func _ready() -> void:
 	add_to_group("player")
 
 func _physics_process(delta: float) -> void:
-	print(flips_left)
 	var gravity = get_gravity().y * delta  # Use the y component of gravity
 	if Global.player_finished:
 		player_moveable = false
